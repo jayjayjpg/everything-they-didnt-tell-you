@@ -21,10 +21,10 @@
 
 // Override theme settings (see ../template/settings.scss)
 $mainFont: 'Lato', sans-serif;
-$mainColor: #000;
+$mainColor: #340000;
 // $headingFont: 'Monoton', Impact, sans-serif;
 $headingFont: 'Playfair Display', 'Times New Roman', serif;
-$headingColor: #000;
+$headingColor: #340000;
 $headingTextShadow: none;
 $headingTextTransform: none;
 $backgroundColor: #fff;
@@ -32,7 +32,7 @@ $linkColor: #ffbcbc;
 $linkColorHover: lighten( $linkColor, 20% );
 $selectionBackgroundColor: rgba(0, 0, 0, 0.99);
 $primary-color: #E04E39;
-$secondary-color: #561919;
+$secondary-color: #000;
 
 section.has-dark-background {
 	&, h1, h2, h3, h4, h5, h6 {
@@ -47,7 +47,7 @@ section.has-dark-background {
 
 
 body {
-	background-color: #ffefef;
+	background-color: #fffefe;
 }
 
 .reveal {
@@ -127,6 +127,10 @@ body {
 
   .col-2 {
 		width: 50%;
+	}
+
+  .col-3 {
+		width: 75%;
 	}
 
 	.col-4 {

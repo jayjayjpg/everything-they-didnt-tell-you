@@ -279,12 +279,12 @@ function createCharts(dataDownloads) {
         options,
     });
 
-    createChart('top-1', 'line', 'Ember CLI Babel', dataDownloads[4]);
+  /*  createChart('top-1', 'line', 'Ember CLI Babel', dataDownloads[4]);
     createChart('top-2', 'line', 'Ember CLI Sass', dataDownloads[5]);
     createChart('top-3', 'line', 'Ember Data', dataDownloads[6]);
     createChart('top-4', 'line', 'Ember Try', dataDownloads[7]);
     createChart('top-5', 'line', 'Ember Wormhole', dataDownloads[8]);
-    createChart('top-4', 'line', 'Ember Concurrency', dataDownloads[9]);
+    createChart('top-4', 'line', 'Ember Concurrency', dataDownloads[9]); */
 }
 
 function createStarsCharts() {
@@ -414,7 +414,7 @@ async function loadCharts() {
   let dataDownloads = await parseDownloadData(downloadList, { factor: 1 });
   let totalDownloads = dataDownloads[13].values;
   console.log(totalDownloads);
-  // createCharts(dataDownloads);
+  createCharts(dataDownloads);
   createChart('chart-ember-download', 'bar', 'Ember CLI - Downloads / Month', dataDownloads[0]); // elementId, label, data, options, colorOptions
   createChart('chart-ember-download-2', 'bar', 'Ember CLI - Downloads / Month', dataDownloads[0]);
   createChart('chart-total-download', 'bar', 'Total Number of Downloads from NPM / Month', dataDownloads[13]);
