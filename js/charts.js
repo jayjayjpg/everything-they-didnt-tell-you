@@ -177,6 +177,7 @@ function createChart(elementId, type = 'line', mainLabel, inputData, configOptio
       fill: true,
       showLine: true,
       borderColor,
+      backgroundColor,
     },
   ];
 
@@ -391,8 +392,22 @@ function getCommsOverviewData() {
   return { slack, gitter };
 }
 
-function parseNewsletterData() {
-  return { values: [1,2,3], labels: ['a','b','c'] };
+async function parseNewsletterData(file) {
+  let data = await fetchData(file);
+  let label = 'Ember Newsletter';
+  let parsedDataSubs = parseDataForLineChart(data, label, { x: 'date',  y: 'subscribers', type: 'time' });
+  let parsedDataEngagement = parseDataForLineChart(data, label, { x: 'date',  y: 'enagemenet rate', type: 'time' });
+
+
+  let roundedDataSubs = roundData(parsedDataSubs, { factor: 1, });
+  let roundedDataEngagement = roundData(parsedDataEngagement, { factor: 1, });
+  console.log({roundedDataEngagement});
+  console.log({sum: sum(roundedDataEngagement.values) / roundedDataEngagement.values.length});
+  return { subs: roundedDataSubs, eng: roundedDataEngagement };
+}
+
+function sum(nums) {
+  return nums.reduce((el, sum) => el + sum);
 }
 
 function normalize(actual, total) {
@@ -405,7 +420,7 @@ function normalizeData(data) {
 
 function parseNewsletter(data) {
   let data = parseDownloadDataNewsletter(data);
-  return npmTotalDownloads.map((num, index) => normalize(data.values[index], num));
+  return data;
 }
 
 async function loadCharts() {
@@ -449,8 +464,10 @@ async function loadCharts() {
   createChart('chart-typescript-download', 'bar', 'Ember CLI TypeScript - Downloads / Month', dataDownloads[12]); // elementId, label, data, options, colorOptions
   createChart('chart-typescript-download-normalized', 'bar', 'Ember CLI TypeScript - Downloads / Month', { labels: dataDownloads[12].labels, values: normalizeData(dataDownloads[12])}); // elementId, label, data, options, colorOptions
   createChart('chart-newsletter-subscribers', 'horizontalBar', '# Subscribers', { labels: ['Ember.js Times','Ember Weekly'], values: [1108,6055]}, defaultOptions.simpleBars); // elementId, label, data, options, colorOptions
-  const goodbitsData = parseNewsletterData('./data/goodbitsstats.json');
-  createChart('chart-subscriber-count', 'line', '# of Subscribers', goodbitsData);
+  const goodbitsData = await parseNewsletterData('./data/goodbitsstats.json');
+  console.log(goodbitsData);
+  createChart('chart-subscriber-count', 'line', '# of Subscribers', goodbitsData.subs);
+  createChart('chart-eng-count', 'line', 'Engagement Rate', goodbitsData.eng);
 }
 
 loadCharts();
