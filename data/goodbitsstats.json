@@ -1,0 +1,362 @@
+[
+  {
+    "subscribers": 137,
+    "opened": 118,
+    "date": "2016-05-02",
+    "clicked": 62,
+    "enagemenet rate": 52.5,
+    "link #1": "https://github.com/EmberTown/ember-hearth/tree/electron",
+    "link #2": "http://emberjs.com/blog/2016/04/28/baseURL.html",
+    "link #3": "https://github.com/ember-cli/rfcs/pull/50"
+  },
+  {
+    "subscribers": 493,
+    "opened": 412,
+    "date": "2016-05-11",
+    "clicked": 169,
+    "enagemenet rate": 41,
+    "link #1": "https://github.com/tomdale/rfcs/blob/master/active/0000-engines.md",
+    "link #2": "https://github.com/ember-fastboot/fastboot/issues/54",
+    "link #3": "http://www.ember-fastboot.com/"
+  },
+  {
+    "subscribers": 655,
+    "opened": 499,
+    "clicked": 150,
+    "date": "2017-02-01",
+    "enagemenet rate": 30.1,
+    "link #1": "https://github.com/emberwatch/ember-language-server",
+    "link #2": "https://github.com/ember-cli/ember-twiddle/pull/490",
+    "link #3": "http://emberwatch.com/"
+  },
+  {
+    "subscribers": 734,
+    "opened": 471,
+    "date": "2017-03-20",
+    "clicked": 164,
+    "enagemenet rate": 34.8,
+    "link #1": "https://github.com/ember-learn/ember-hearth",
+    "link #2": "https://github.com/ember-learn/ember-api-docs",
+    "link #3": "https://emberjs.com/learn/"
+  },
+  {
+    "subscribers": 738,
+    "opened": 459,
+    "date": "2017-07-24",
+    "clicked": 90,
+    "enagemenet rate": 19.6,
+    "link #1": "https://emberjs.com/blog/2017/07/19/ember-fastboot-1-0-release.html",
+    "link #2": "https://github.com/ember-fastboot/fastboot-website/pull/70",
+    "link #3": "https://github.com/rwjblue/rfcs/blob/new-testing-api/text/0230-simplify-qunit-testing-api.md#setuprenderingtest"
+  },
+  {
+    "subscribers": 755,
+    "opened": 475,
+    "date": "2017-08-03",
+    "clicked": 136,
+    "enagemenet rate": 28.6,
+    "link #1": "https://github.com/ember-cli/ember-cli/pull/7256",
+    "link #2": "https://github.com/emberjs/guides/commit/040e53050867399b531e9dd4dc3402da7320d468",
+    "link #3": "https://github.com/ember-cli/ember-cli/pull/7244"
+  },
+  {
+    "subscribers": 765,
+    "opened": 446,
+    "date": "2017-08-11",
+    "clicked": 123,
+    "enagemenet rate": 27.6,
+    "link #1": "https://github.com/glimmerjs/glimmer-vm/pull/549",
+    "link #2": "http://www.chriskrycho.com/2017/announcing-ember-cli-typescript-100.html",
+    "link #3": "https://www.emberjs.com/blog/2016/07/29/announcing-the-glimmer-2-alpha.html#toc_a-whole-lot-more-to-come"
+  },
+  {
+    "subscribers": 766,
+    "opened": 446,
+    "date": "2017-08-18",
+    "clicked": 105,
+    "enagemenet rate": 23.5,
+    "link #1": "https://github.com/kellyselden/ember-cli-update",
+    "link #2": "https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md",
+    "link #3": "https://github.com/ember-cli/babel-plugin-ember-modules-api-polyfill/pull/17"
+  },
+  {
+    "subscribers": 766,
+    "opened": 423,
+    "date": "2017-08-26",
+    "clicked": 95,
+    "enagemenet rate": 22.5,
+    "link #1": "https://github.com/emberjs/data/pull/5144",
+    "link #2": "https://github.com/glimmerjs/glimmer.js/pull/3",
+    "link #3": "https://github.com/emberjs/rfcs/blob/master/text/0176-javascript-module-api.md"
+  },
+  {
+    "subscribers": 774,
+    "opened": 425,
+    "date": "2017-09-01",
+    "clicked": 115,
+    "enagemenet rate": 27.1,
+    "link #1": "https://github.com/emberjs/rfcs/pull/240",
+    "link #2": "https://github.com/glimmerjs/glimmer-vm/pull/631",
+    "link #3": "https://github.com/ember-fastboot/ember-cli-fastboot/issues/513"
+  },
+  {
+    "subscribers": 774,
+    "opened": 450,
+    "date": "2017-09-08",
+    "clicked": 122,
+    "enagemenet rate": 27.1,
+    "link #1": "https://emberjs.com/blog/2017/09/01/ember-2-15-released.html",
+    "link #2": "https://github.com/glimmerjs/glimmer.js",
+    "link #3": "https://github.com/ember-cli/ember-cli/pull/7317"
+  },
+  {
+    "subscribers": 771,
+    "opened": 439,
+    "date": "2017-09-15",
+    "clicked": 101,
+    "enagemenet rate": 23,
+    "link #1": "https://github.com/ember-cli/rfcs/pull/110",
+    "link #2": "https://github.com/ember-cli/ember-cli/pull/7331/",
+    "link #3": "https://github.com/emberjs/ember.js/pull/15649"
+  },
+  {
+    "subscribers": 786,
+    "opened": 431,
+    "date": "2017-09-22",
+    "clicked": 100,
+    "enagemenet rate": 23.2,
+    "link #1": "https://github.com/ember-learn/roadmap-page",
+    "link #2": "https://github.com/emberjs/guides/pull/2061",
+    "link #3": "https://github.com/glimmerjs/glimmer-application-pipeline/pull/128"
+  },
+  {
+    "subscribers": 787,
+    "opened": 435,
+    "date": "2017-09-29",
+    "clicked": 153,
+    "enagemenet rate": 35.2,
+    "link #1": "https://github.com/emberjs/rfcs/pull/252",
+    "link #2": "https://emberjs.com/statusboard",
+    "link #3": "https://github.com/glimmerjs/glimmer.js/pull/19"
+  },
+  {
+    "subscribers": 846,
+    "opened": 426,
+    "date": "2017-10-06",
+    "clicked": 91,
+    "enagemenet rate": 21.4,
+    "link #1": "https://emberjs.com/blog/2017/10/03/the-road-to-ember-3-0.html",
+    "link #2": "https://github.com/ember-fastboot/ember-cli-fastboot/pull/515",
+    "link #3": "https://github.com/ember-cli/ember-cli/pull/7338"
+  },
+  {
+    "subscribers": 795,
+    "opened": 431,
+    "date": "2017-10-13",
+    "clicked": 114,
+    "enagemenet rate": 26.5,
+    "link #1": "https://www.emberjs.com/blog/2017/10/11/ember-2-16-released.html",
+    "link #2": "https://github.com/emberjs/rfcs/pull/259",
+    "link #3": "https://emberjs.com/blog/2017/10/10/glimmer-progress-report.html"
+  },
+  {
+    "subscribers": 795,
+    "opened": 445,
+    "date": "2017-10-21",
+    "clicked": 143,
+    "enagemenet rate": 32.1,
+    "link #1": "https://github.com/emberjs/rfcs/blob/master/text/0232-simplify-qunit-testing-api.md",
+    "link #2": "https://emberjs.com/mascots/",
+    "link #3": "https://guides.emberjs.com/v2.16.0/getting-started/js-primer/"
+  },
+  {
+    "subscribers": 794,
+    "opened": 429,
+    "date": "2017-10-27",
+    "clicked": 114,
+    "enagemenet rate": 26.6,
+    "link #1": "http://rwjblue.com/2017/10/23/ember-qunit-simplication/",
+    "link #2": "https://github.com/emberjs/ember.js/pull/15742",
+    "link #3": "https://try.glimmerjs.com"
+  },
+  {
+    "subscribers": 801,
+    "opened": 324,
+    "date": "2017-11-03",
+    "clicked": 206,
+    "enagemenet rate": 63.6,
+    "link #1": "https://www.surveymonkey.com/r/KZZPBTJ",
+    "link #2": "https://github.com/ember-cli/ember-rfc176-data",
+    "link #3": "https://github.com/ember-cli/ember-rfc176-data#new-modules-to-globals"
+  },
+  {
+    "subscribers": 801,
+    "opened": 324,
+    "date": "2017-11-11",
+    "clicked": 206,
+    "enagemenet rate": 63.6,
+    "link #1": "https://www.surveymonkey.com/r/KZZPBTJ",
+    "link #2": "https://github.com/ember-cli/ember-rfc176-data",
+    "link #3": "https://github.com/ember-cli/ember-rfc176-data#new-modules-to-globals"
+  },
+  {
+    "subscribers": 798,
+    "opened": 285,
+    "date": "2017-11-17",
+    "clicked": 100,
+    "enagemenet rate": 35.1,
+    "link #1": "https://github.com/ember-cli/ember-cli/pull/7427",
+    "link #2": "https://github.com/emberjs/guides/pull/2123",
+    "link #3": "https://github.com/ember-cli/ember-cli/pull/7424"
+  },
+  {
+    "subscribers": 843,
+    "opened": 492,
+    "date": "2017-11-25",
+    "clicked": 74,
+    "enagemenet rate": 15,
+    "link #1": "https://github.com/glimmerjs/glimmer-website/pull/102",
+    "link #2": "http://emberconf.com/become-a-speaker.html",
+    "link #3": "https://github.com/emberjs/ember.js/pull/15848"
+  },
+  {
+    "subscribers": 846,
+    "opened": 465,
+    "date": "2017-11-25",
+    "clicked": 101,
+    "enagemenet rate": 21.7,
+    "link #1": "https://github.com/ember-cli/eslint-plugin-ember",
+    "link #2": "https://try.glimmerjs.com/",
+    "link #3": "https://github.com/ember-cli/ember-cli/pull/7455"
+  },
+  {
+    "subscribers": 858,
+    "opened": 479,
+    "date": "2017-12-02",
+    "clicked": 139,
+    "enagemenet rate": 29,
+    "link #1": "https://github.com/kellyselden/ember-cli-tree-shaker",
+    "link #2": "https://www.emberjs.com/blog/2017/10/03/the-road-to-ember-3-0.html",
+    "link #3": "https://github.com/ember-cli/ember-cli-app-version"
+  },
+  {
+    "subscribers": 869,
+    "opened": 518,
+    "date": "2017-12-09",
+    "clicked": 150,
+    "enagemenet rate": 29,
+    "link #1": "https://emberjs.com/mascots/",
+    "link #2": "https://github.com/glimmerjs/glimmer-vm/pull/752",
+    "link #3": "https://github.com/emberjs/ember.js/issues/15933"
+  },
+  {
+    "subscribers": 871,
+    "opened": 498,
+    "date": "2017-12-16",
+    "clicked": 136,
+    "enagemenet rate": 27.3,
+    "link #1": "https://github.com/emberjs/rfcs/pull/283",
+    "link #2": "https://github.com/emberjs/rfcs/pull/281",
+    "link #3": "https://github.com/emberjs/website/pull/3088"
+  },
+  {
+    "subscribers": 871,
+    "opened": 440,
+    "date": "2017-12-22",
+    "clicked": 101,
+    "enagemenet rate": 23,
+    "link #1": "https://github.com/ember-cli/ember-cli/pull/7488",
+    "link #2": "https://github.com/emberjs/rfcs/blob/master/text/0143-module-unification.md",
+    "link #3": "https://github.com/emberjs/rfcs/pull/286"
+  },
+  {
+    "subscribers": 873,
+    "opened": 475,
+    "date": "2018-12-29",
+    "clicked": 99,
+    "enagemenet rate": 20.8,
+    "link #1": "https://github.com/emberjs/rfcs/pull/287",
+    "link #2": "https://github.com/emberjs/ember.js/pull/16023",
+    "link #3": "https://github.com/emberjs/ember.js/pull/16018"
+  },
+  {
+    "subscribers": 872,
+    "opened": 480,
+    "date": "2018-01-05",
+    "clicked": 129,
+    "enagemenet rate": 26.9,
+    "link #1": "https://github.com/ember-learn/ember-api-docs/pull/413",
+    "link #2": "https://github.com/emberjs/rfcs/blob/master/text/0276-named-args.md",
+    "link #3": "https://www.emberjs.com/blog/2018/01/01/ember-2-18-released.html"
+  },
+  {
+    "subscribers": 901,
+    "opened": 528,
+    "date": "2018-01-12",
+    "clicked": 139,
+    "enagemenet rate": 26.3,
+    "link #1": "https://github.com/emberjs/rfcs/pull/293",
+    "link #2": "https://github.com/emberjs/rfcs/pull/38#issuecomment-355800759",
+    "link #3": "https://github.com/emberjs/rfcs/pull/286"
+  },
+  {
+    "subscribers": 914,
+    "opened": 528,
+    "date": "2018-01-19",
+    "clicked": 164,
+    "enagemenet rate": 31.1,
+    "link #1": "https://www.emberjs.com/api/",
+    "link #2": "http://blog.melsumner.com/ember/the-ember-js-website/",
+    "link #3": "https://github.com/emberjs/ember.js/issues/15723"
+  },
+  {
+    "subscribers": 932,
+    "opened": 562,
+    "date": "2018-01-26",
+    "clicked": 173,
+    "enagemenet rate": 30.8,
+    "link #1": "https://github.com/ember-learn/statusboard",
+    "link #2": "https://github.com/emberjs/ember.js/issues/16134",
+    "link #3": "https://github.com/emberjs/rfcs/pull/286"
+  },
+  {
+    "subscribers": 1016,
+    "opened": 561,
+    "date": "2018-02-02",
+    "clicked": 146,
+    "enagemenet rate": 26,
+    "link #1": "https://github.com/ember-learn/ember-styleguide",
+    "link #2": "https://github.com/emberjs/ember-test-helpers/blob/master/API.md",
+    "link #3": "https://github.com/emberjs/rfcs/pull/298"
+  },
+  {
+    "subscribers": 1036,
+    "opened": 601,
+    "date": "2018-02-09",
+    "clicked": 202,
+    "enagemenet rate": 33.6,
+    "link #1": "https://discuss.emberjs.com/t/readers-questions-what-is-the-status-of-ember-engines/14236",
+    "link #2": "https://github.com/emberjs/rfcs/projects/1",
+    "link #3": "https://github.com/emberjs/rfcs/pull/294"
+  },
+  {
+    "subscribers": 1044,
+    "opened": 589,
+    "date": "2018-02-16",
+    "clicked": 174,
+    "enagemenet rate": 29.5,
+    "link #1": "https://discuss.emberjs.com/t/readers-questions-are-there-any-plans-for-ember-data-to-embrace-immutability/14259",
+    "link #2": "https://www.emberjs.com/blog/2018/02/14/ember-3-0-released.html",
+    "link #3": "https://github.com/emberjs/rfcs/blob/master/text/0281-es5-getters.md"
+  },
+  {
+    "subscribers": 1059,
+    "opened": 477,
+    "date": "2018-02-23",
+    "clicked": 124,
+    "enagemenet rate": 26,
+    "link #1": "https://discuss.emberjs.com/t/readers-questions-how-do-i-pitch-ember-at-my-company/14289",
+    "link #2": "https://github.com/emberjs/rfcs/blob/master/text/0286-block-let-template-helper.md",
+    "link #3": "https://emberjs.com/ember-community-survey-2018"
+  }
+]
