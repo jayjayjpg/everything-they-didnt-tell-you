@@ -29,19 +29,32 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<small style="background-color: #ff4444; color: #fff;">Work in Progress. You can also find the animated slides here: <br>
-						<a href="https://jessica-jordan.github.io/everything-they-didnt-tell-you/" target="slides-jj">https://jessica-jordan.github.io/everything-they-didnt-tell-you/</a></small>
+					<!-- <small style="background-color: #ff4444; color: #fff;">Work in Progress. You can also find the animated slides here: <br>
+						<a href="https://jessica-jordan.github.io/everything-they-didnt-tell-you/" target="slides-jj">https://jessica-jordan.github.io/everything-they-didnt-tell-you/</a></small> -->
 					<h1 style="font-size: 2.1em;">Everything they didn't tell you about the <br> <span class="primary-color">Ember Community</span></h1>
 					<small class="left" style="font-style: italic; float: right; margin-top: 2em;">Jessica Jordan · @jjordan_dev</small>
 				</section>
 				<section>
-          <h2>Hi!</h2>
-					<p>company logo here, more pitches there</p>
+				<div class="row flex">
+        <div class="col col-3">
+          <h3>Jessica Jordan</h3>
+					<div class="row flex" style="justify-content: flex-start;">
+            <div class="col" style="flex-direction: column; display: flex; position: relative;">
+              <p class="fragment fade-out"><img src="./img/simplabs.gif" alt="Simplabs Company Logo - European Consultancy Ember.js Ruby on Rails Phoenix Elixir" height="100" /></p>
+							<p class="fragment fade-in" style="position: absolute;"><img class="drop" src="./img/emberjstimes-2.png" height="300" /></p>
+						</div>
+					</div>
+				</div>
+				<div class="col col-4">
+						<img src="./img/jessica.jpeg" alt="Jessica Jordan | Software Engineer | Berlin" />
+						<small class="flex"><img src="./img/twitter.png" height="20" /> @jjordan_dev <img src="./img/slack-icon.png" height="20" /> jessica</small>
+				</div>
+				</div>
 				</section>
 				<section>
           <div class="row">
             <div class="col col-2">
-							<img src="./img/subculture.jpg" height="300"/>
+							<img src="./img/punk.jpg" height="300"/>
               <img src="./img/subculture-2.jpg" height="300"/>
 						</div>
 						<div class="col col-2">
@@ -97,7 +110,7 @@ Classic structuralist accounts of youth subcultures (e.g. Clarke and Jefferson 1
 							<h3>The Emberista sub culture</h3>
 							<h4 class="left">/T͟Hə ˈembəˈristə ˈsəbˌkəlCHər/</h4>
 							<hr />
-							<p class="left">A JavaScript group within the larger JavaScript community, often having beliefs or interests at variance with those of the larger culture.</p>
+							<p class="left">A group within the larger JavaScript community, often having beliefs or interests at variance with those of the larger culture.</p>
 						</div>
 					</div>
 					<aside class="notes">
@@ -229,33 +242,36 @@ Classic structuralist accounts of youth subcultures (e.g. Clarke and Jefferson 1
 					<aside class="notes">mention official integrated addon numbers @ ember observer</aside>
 				</section> -->
 				<section>
-					<h2>Evaluating Usage with Ember Observer</h2>
+					<h2>Evaluating usage with Ember Observer</h2>
 					<div class="row flex">
              <div class="col col-2">
               <img src="./img/emberobserver.png" height="250"/>
 							<!-- <p>The best way to explore the Ember addon ecosystem</p> -->
 						 </div>
 						 <div class="col col-2">
-							 <p><img src="./img/katie.jpg" /></p>
+							 <p><img class="drop" src="./img/katie.jpg" /></p>
 							 <small class="right source"><a href="https://www.youtube.com/watch?v=_FZw_cokIhc" target="community-katie-gengler">EmberConf 2016: The Ember Addon Community by Katie Gengler</a></small>
 						 </div>
 					</div>
 				</section>
 				<section>
-					<h3>Top #10 Addons: ⭐️</h3>
-					leegend for tomsters &amp; k=links
-										<div class="chart">
-					<canvas id="stars-ember" width="400" height="400"></canvas>
-				</div>
+					<h3>Top #10 Addons - Github ⭐️</h3>
+						<div class="chart">
+								<canvas id="stars-ember" width="400" height="400"></canvas>
+						</div>
+						<div class="fragment fade-in">
+						<small>🐹: Ember Core Addon</small>
+						<small>🔗: included in Ember CLI blueprint by default</small>
+						</div>
 				</section>
 				<section>
-					<h3>Top #10 Addons: Downloads / Month</h3>
+					<h3>Top #10 Addons - Downloads / Month</h3>
 					<div class="chart">
 						<canvas id="ember-dl" width="400" height="400"></canvas>
 					</div>
 				</section>
 				<section>
-					 <h3>Top #10 Addons: Contributor Ratio</h3>
+					 <h3>Top #10 Addons - Contributors per Download</h3>
 					<div class="chart">
 						<canvas id="ember-ratio" width="400" height="400"></canvas>
 					</div>
@@ -269,9 +285,9 @@ Classic structuralist accounts of youth subcultures (e.g. Clarke and Jefferson 1
 							</div>
 						</div>
 						<div class="col col-4">
-							<p class="fragment fade-in"><img src="./img/addon-1.png" height="100" /></p>
-							<p class="fragment fade-in"><img src="./img/addon-2.png" height="100" /></p>
-							<p class="fragment fade-in"><img src="./img/addon-3.png" height="100" /></p>
+							<p class="fragment fade-in"><img class="drop" src="./img/addon-1.png" height="100" /></p>
+							<p class="fragment fade-in"><img class="drop" src="./img/addon-2.png" height="60" /></p>
+							<p class="fragment fade-in"><img  class="drop" src="./img/addon-3.png" height="100" /></p>
 						</div>
 					</div>
 					<aside class="notes">
@@ -283,10 +299,11 @@ Classic structuralist accounts of youth subcultures (e.g. Clarke and Jefferson 1
 					<pre><code>// app/templates/application.hbs
 {{rick-roll}}</code></pre>
 				</section>
-				<section data-background-image="./img/rick.gif">
+				<section data-background-image="./img/rick.gif" data-audio-src="audio/rick.mp3">
+					<audio data-autoplay class="fragment" src="audio/rick.mp3"></audio>
 				</section>
 				<section>
-          <h3 class="subtitle">The Emberista Archetype</h3>
+          <h3 class="subtitle">The Emberista sub culture</h3>
 					<hr />
 					<h2>Contribution</h2>
 				<aside class="notes">
@@ -299,32 +316,51 @@ Classic structuralist accounts of youth subcultures (e.g. Clarke and Jefferson 1
 					</div>
 				</section>
 				<section>
-         <h2>Request for Comments (RFC)</h2>
-				 <p><img src="./img/rfcs.png" /></p>
-				 <p>Communicating and crafting features &amp; improvements in collaboration with the community</p>
+         <h2>Request for Comments</h2>
+				 <p><img class="drop" src="./img/rfcs.png" /></p>
+				 <aside class="notes">
+				 		<p>Communicating and crafting features &amp; improvements in collaboration with the community</p>
+			 	 </aside>
 				</section>
 				<section>
-					<div class="chart pie pie-sm">
-						<canvas id="pie-chart-rfcs" width="200" height="200"></canvas>
-						measures of participitation in RFCs, relevant part of community participates
+					<div class="row">
+            <div class="col col-2">
+             <img class="drop" src="./img/qunitrfc.png" height="300" />
+						</div>
+						<div class="fragment fade-in col col-2">
+             <img class="drop" src="./img/qunitquest.png" height="300" />
+						</div>
 					</div>
-				</section>
-				<section>
-          <h2>Example: QUnit Testing API &amp; Quest Issues</h2>
-					<p> see also Tobi's tslk</p>
+					<small class="right source"><a href="https://github.com/emberjs/rfcs/blob/master/text/0232-simplify-qunit-testing-api.md" target="ts">RFC #232 - Simplify QUnit Testing API<br> https://github.com/emberjs/rfcs/blob/master/text/0232-simplify-qunit-testing-api.md</a></small>
+					<small class="fragment fade-in" style="margin-top: 2em; text-align: left; font-style: italic;">More in EmberConf 2018 talks "The Next Generation of Testing" by Tobias Bieniek &amp; "Say more" by Jamie White </small>
 					<aside class="notes">
             qunit changes go into blueprints, communication in release channels, tasks get easy picked up on
 					</aside>
 				</section>
 				<section>
+					<div class="chart pie pie-sm">
+						<canvas id="pie-chart-rfcs" width="200" height="200"></canvas>
+					</div>
+				</section>
+				<section>
 					<h2>Statusboard</h2>
-          <p><img src="./img/statusboard.png" /></p>
+          <p><img class="drop" src="./img/statusboard.png" /></p>
+				</section>
+				<section>
+         <h2>Request for Comments</h2>
+				 <div style="position: relative;">
+				 <p class="fragment fade-out"><img class="drop" src="./img/rfcs.png" /></p>
+				 <p class="fragment fade-in" style="position: absolute; top: 0;"><img class="drop" src="./img/reactrfc.png" /></p>
+			 </div>
+				 <aside class="notes">
+				 		<p>Communicating and crafting features &amp; improvements in collaboration with the community</p>
+			 	 </aside>
 				</section>
 				<!-- <section>
           More stats
 				</section> -->
 				<section>
-          <h3 class="subtitle">The Emberista Archetype</h3>
+          <h3 class="subtitle">The Emberista sub culture</h3>
 					<hr />
 					<h2>Communication</h2>
 				<aside class="notes">
@@ -336,13 +372,13 @@ Classic structuralist accounts of youth subcultures (e.g. Clarke and Jefferson 1
 					<img class="fragment fade-in" src="./img/ember-trend.svg" height="400" alt="Ember.js Graph Number of Questions on Stackoverlow in past month" />
 					<h3 class="fragment fade-in" style="Position: absolute; top: 0;">Unpopular Communication Channels?</h3>
 				</section>
-				<section>
+				<!-- <section>
 					<h2>Popular Communication Channels</h2>
 					<div class="chart">
 
 						<canvas id="channel-comparison" width="200" height="200"></canvas>
 					</div>
-				</section>
+				</section> -->
 				<section data-background-image="./img/slack-development-bg.png">
 					<h2>Slackin'</h2>
 					<ul>
@@ -360,9 +396,9 @@ Classic structuralist accounts of youth subcultures (e.g. Clarke and Jefferson 1
 				<section data-background-image="./img/slack-development-bg-2.png">
 					<h2>160 channels?</h2>
 					<ul style="list-style: none">
-            <li class="fragment fade-in"><img src="./img/channel-1.png"/></li>
-						<li class="fragment fade-in"><img src="./img/channel-2.png"/></li>
-						<li class="fragment fade-in"><img src="./img/channel-3.png"/></li>
+            <li class="fragment fade-in"><img class="drop" src="./img/channel-1.png"/></li>
+						<li class="fragment fade-in"><img class="drop" src="./img/channel-2.png"/></li>
+						<li class="fragment fade-in"><img class="drop" src="./img/channel-3.png"/></li>
 					</ul>
 				</section>
 				<section data-background-image="./img/slack-development-bg-2.png">
@@ -436,7 +472,7 @@ Classic structuralist accounts of youth subcultures (e.g. Clarke and Jefferson 1
 					https://insights.stackoverflow.com/survey/2017 - together with Rust and Smalltalk
 				 </aside>
 				</section>
-				<section>
+				<!-- <section>
           <img src="./img/typescript.png" height="100" />
 					<div class="chart bar bar-sm">
 						<canvas data-chart-type="bar" id="chart-typescript-download-normalized" width="400" height="400"></canvas>
@@ -447,7 +483,7 @@ Classic structuralist accounts of youth subcultures (e.g. Clarke and Jefferson 1
 					TypeScript increases user satisfaction, also one of the top 3 most loved languages (64%) in Stackoverflow community Survey:
 					https://insights.stackoverflow.com/survey/2017 - together with Rust and Smalltalk
 				 </aside>
-				</section>
+			 </section> -->
 				<section>
           <img src="./img/typescript-trend.svg" height="400" alt="TypeScript Graph Number of Questions on Stackoverlow in past month" />
 				</section>
@@ -459,18 +495,13 @@ Classic structuralist accounts of youth subcultures (e.g. Clarke and Jefferson 1
 					</div>
 				</section>
 				<section>
+					<h2>Communication through the Core &amp; Learning Team</h2>
 					<div class="row flex">
-           <div class="col col-4">
-             <img src="./img/guides.png" />
+           <div class="col col-2">
+             <img class="drop" src="./img/blog.png" />
 				   </div>
-					 <div class="col col-4">
-             <img src="./img/apidocs.png" />
-				   </div>
-					 <div class="col col-4">
-             <img src="./img/blog.png" />
-				   </div>
-					 <div class="col col-4">
-             <img src="./img/emberjstimes.png" height="120"/>
+					 <div class="col col-2">
+             <img class="drop" src="./img/emberjstimes.png" height="300"/>
 				   </div>
 					</div>
 				</section>
@@ -480,8 +511,10 @@ Classic structuralist accounts of youth subcultures (e.g. Clarke and Jefferson 1
 							<img src="./img/emberjstimes.png" height="200"/>
 							<img src="./img/emberweekly.jpg" height="200"/>
 						</div>
-						<div class="chart col col-2 bar">
-							<canvas id="chart-newsletter-subscribers" width="200" height="200"></canvas>
+						<div class="chart col col-2 bar flex" style="flex-direction: column;">
+							<p>> 1100 subscribers</p>
+							<p>> 6000 subscribers</p>
+							<!-- <canvas id="chart-newsletter-subscribers" width="200" height="200"></canvas> -->
 						</div>
 					</div>
 				</section>
@@ -493,9 +526,6 @@ Classic structuralist accounts of youth subcultures (e.g. Clarke and Jefferson 1
 						<div class="col col-3 line chart">
 							<canvas id="chart-subscriber-count" width="200" height="200"></canvas>
 						</div>
-						<!-- <div class="chart floating">
-							<canvas id="chart-subscriber-count" width="200" height="200"></canvas>
-						</div> -->
 					</div>
 				</section>
 				<section>
@@ -593,7 +623,8 @@ Classic structuralist accounts of youth subcultures (e.g. Clarke and Jefferson 1
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/audio-slideshow/audio-slideshow.js', async: true, condition: function( ) { return !!document.body.classList; } },
 				]
 			});
 		</script>

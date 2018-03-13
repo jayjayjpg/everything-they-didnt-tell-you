@@ -83,7 +83,7 @@ const defaultOptions = {
                 fontSize: 16,
               },
               offset: true,
-              bounds: 'ticks',
+              // bounds: 'ticks',
               type: 'time',
               distribution: 'series',
               gridLines: {
@@ -105,10 +105,26 @@ const defaultOptions = {
          yAxes: [{
              ticks: {
                fontSize: 16,
-               beginAtZero: true
-             }
+               beginAtZero: true,
+               padding: 60,
+             },
+             afterTickToLabelConversion : function(q){
+                 for(var tick in q.ticks){
+                   let tickRaw = q.ticks[tick];
+                   let cutoff = tickRaw.length - 3;
+                   if (tickRaw > 1000) {
+                     q.ticks[tick] = tickRaw.substring(0, cutoff) + 'K';
+                   }
+                }
+             },
          }],
          xAxes: [{
+           bounds: 'ticks',
+           offset: true,
+           gridLines: {
+             offsetGridLines: true,
+           },
+           // type: 'category',
            ticks: {
               fontSize: 16,
               beginAtZero: true
@@ -139,7 +155,54 @@ const defaultOptions = {
            }],
        },
     },
+   comparison: {
+       legend: defaultLegend,
+       maintainAspectRatio: false,
+       scales: {
+           yAxes: [{
+               ticks: {
+                   beginAtZero: true,
+                   padding: 40,
+                   fontSize: 16,
+               },
+               afterTickToLabelConversion : function(q){
+                 for(var tick in q.ticks){
+                     let tickRaw = q.ticks[tick];
+                     let cutoff = tickRaw.length - 3;
+                     let punctuation = parseInt(tickRaw.charAt(1)) !== 0 ? tickRaw.charAt(0) + '.' + tickRaw.charAt(1) + tickRaw.substring(1, cutoff) : tickRaw.substring(0, cutoff);
+                     if (tickRaw >=1000 && tickRaw < 1000000) {
+                       q.ticks[tick] = punctuation + 'K';
+                       q.ticks[tick].trim();
+                     } else if (tickRaw >= 1000000) {
+                       punctuation = parseInt(tickRaw.charAt(1)) !== 0 ? tickRaw.charAt(0) + '.' + tickRaw.charAt(1) + tickRaw.substring(1, cutoff - 3) : tickRaw.substring(0, cutoff -3);
+                       q.ticks[tick] = punctuation + 'M';
+                     }
+                 }
+               },
+           }],
+           xAxes: [{
+               ticks: {
+                 fontSize: 16,
+               },
+               offset: true,
+               bounds: 'ticks',
+               type: 'time',
+               distribution: 'series',
+               gridLines: {
+                    offsetGridLines: false,
+               },
+               time: {
+                 //  displayFormats: {
+                       // month: 'MMM YYYY'
+                       parser: 'MMM, YYYY',
+                 //  }
+               }
+           }],
+       },
+    },
 };
+
+Chart.defaults.global.scaleLabel = "   <%%=value%>";
 
 const npmTotalDownloads = [6959080358,7287713518,9253309264,8544256533,9866551398,10526224587,10821685524,
   11927262465,12343332282,14216757113,14589759948,13318683306,15974325812,16655860047,
@@ -193,13 +256,16 @@ async function dataPipeline(dataId, factor) {
 }
 
 
-function createChart(elementId, type = 'line', mainLabel, inputData, configOptions, colorOptions, extraLabels) {
+function createChart(elementId, type = 'line', mainLabel, inputData, configOptions, colorOptions, extraLabels, paddingConfig) {
   var ctx = document.getElementById(elementId).getContext('2d');
   let dataIsArray = Object.keys(inputData)[0] === '0';
 
   const backgroundColor = colorOptions && colorOptions.backgroundColor ? colorOptions.backgroundColor : defaultColors.backgrounds;
   let borderColor = colorOptions && colorOptions.borderColor ? colorOptions.borderColor : defaultColors.main;
   const options = configOptions ? configOptions : defaultOptions.bars;
+  if (paddingConfig) {
+    options.scales.yAxes.ticks.padding = paddingConfig;
+  }
   const label = mainLabel ? mainLabel : data.label;
   const labels = dataIsArray ? extraLabels : inputData.labels;
 
@@ -263,7 +329,7 @@ function createPieChart(elementId, mainLabel, inputData, configOptions, colorOpt
 }
 
 function createCharts(dataDownloads) {
-    var options = defaultOptions.bars;
+    var options = defaultOptions.comparison;
     var ctx1 = document.getElementById("line-chart-framework-comparison").getContext('2d');
     const backgroundColor = defaultColors.backgrounds;
     const borderColor = defaultColors.borders;
@@ -339,11 +405,95 @@ function createStarsCharts() {
   const dataRatio = dataC.map((el, index) => el / dataD[index]);
   const options = {
       maintainAspectRatio: false,
+      legend: defaultLegend,
       scales: {
+        xAxes: [{
+            ticks: {
+                beginAtZero: true,
+                padding: 40,
+                fontSize: 16,
+            },
+         }],
           yAxes: [{
               ticks: {
-                  beginAtZero:true
-              }
+                  beginAtZero: true,
+                  fontSize: 16,
+                  padding: 70,
+                  stepSize: 1000,
+              },
+              afterTickToLabelConversion: function(q){
+                  for(var tick in q.ticks){
+                    let tickRaw = q.ticks[tick];
+                    let cutoff = tickRaw.length - 3;
+                    if (tickRaw >=1000 && tickRaw < 1000000) {
+                      let punctuation = parseInt(tickRaw.charAt(1)) !== 0 ? tickRaw.charAt(0) + '.' + tickRaw.charAt(1) + tickRaw.substring(1, cutoff) : tickRaw.substring(0, cutoff);
+
+                      q.ticks[tick] = punctuation + 'K';
+                      q.ticks[tick].trim();
+                    } else if (tickRaw >= 1000000) {
+                      let tickRaw = q.ticks[tick];
+                      q.ticks[tick] = tickRaw.substring(0, cutoff - 3) + 'M';
+                    }
+                  }
+              },
+          }]
+      }
+  }
+
+  const dlOptions = {
+      maintainAspectRatio: false,
+      legend: defaultLegend,
+      scales: {
+        xAxes: [{
+            ticks: {
+                beginAtZero: true,
+                padding: 40,
+                fontSize: 16,
+            },
+         }],
+          yAxes: [{
+              ticks: {
+                  beginAtZero: true,
+                  fontSize: 16,
+                  padding: 70,
+                  stepSize: 100000,
+              },
+              afterTickToLabelConversion: function(q){
+                  for(var tick in q.ticks){
+                    let tickRaw = q.ticks[tick];
+                    let cutoff = tickRaw.length - 3;
+                    if (tickRaw >=1000 && tickRaw < 1000000) {
+                      let punctuation = parseInt(tickRaw.charAt(1)) !== 0 ? tickRaw.charAt(0) + '.' + tickRaw.charAt(1) + tickRaw.substring(1, cutoff) : tickRaw.substring(0, cutoff);
+
+                      q.ticks[tick] = punctuation + 'K';
+                      q.ticks[tick].trim();
+                    } else if (tickRaw >= 1000000) {
+                      let tickRaw = q.ticks[tick];
+                      q.ticks[tick] = tickRaw.substring(0, cutoff - 3) + 'M';
+                    }
+                  }
+              },
+          }]
+      }
+  }
+
+  const ratioOptions = {
+      maintainAspectRatio: false,
+      legend: defaultLegend,
+      scales: {
+        xAxes: [{
+            ticks: {
+                beginAtZero: true,
+                padding: 40,
+                fontSize: 16,
+            },
+         }],
+          yAxes: [{
+              ticks: {
+                  beginAtZero: true,
+                  fontSize: 16,
+                  padding: 70,
+              },
           }]
       }
   }
@@ -362,14 +512,15 @@ function createStarsCharts() {
         data: dataC,
         borderWidth: 1
   }];
-  const dataTwo = { labels, values: normalizeData({values: dataD}) };
+  // const dataTwo = { labels, values: normalizeData({values: dataD}) };
+  const dataTwo = { labels, values: dataD };
   const dataThree = { labels, values: dataRatio };
 
   var barCtx2 = document.getElementById("ember-dl").getContext('2d');
   var barCtx3 = document.getElementById("ember-ratio").getContext('2d');
   createChart('stars-ember', 'bar', 'Stars Ember', datasetOne, options, null, labels);
-  createChart('ember-dl', 'bar', 'Downloads per month (normalized)', dataTwo, options);
-  createChart('ember-ratio', 'bar', 'Contributors per Download', dataThree, options);
+  createChart('ember-dl', 'bar', 'Downloads per month', dataTwo, dlOptions);
+  createChart('ember-ratio', 'bar', 'Contributors per Download', dataThree, ratioOptions);
 }
 
 function createPieCharts(data) {
@@ -465,19 +616,20 @@ async function loadCharts() {
   createChart('chart-ember-download', 'bar', 'Ember CLI - Downloads / Month', dataDownloads[0]); // elementId, label, data, options, colorOptions
   //createChart('chart-ember-download-2', 'bar', 'Ember CLI - Downloads / Month', dataDownloads[0]);
   //createChart('chart-total-download', 'bar', 'Total Number of Downloads from NPM / Month', dataDownloads[13]);
-  let normalizedCliDownloads = normalizeData(dataDownloads[0]);
+  // let normalizedCliDownloads = normalizeData(dataDownloads[0]);
+  let normalizedCliDownloads = dataDownloads[0].values;
   let normalizedCliDownloadsData = { labels: dataDownloads[0].labels, values: normalizedCliDownloads };
-  console.log(normalizedCliDownloadsData);
 //  createChart('chart-ember-download-normalized', 'bar', 'Ember CLI - Downloads / Month (normalized)', normalizedCliDownloadsData);
-  let channelCompData = { labels: ['Slack', 'Twitter: @emberjs', 'Gitter', 'IRC'], values: [11495, 38737, 718, 999]};
+  // let channelCompData = { labels: ['Slack', 'Twitter: @emberjs',], values: [11495, 38737, 718, 999]};
   createStarsCharts();
-  createChart('channel-comparison', 'bar', '# of Users', channelCompData, defaultOptions.simpleBars);
+  // createChart('channel-comparison', 'bar', '# of Users', channelCompData);
   const addonData = { labels: ['UI Elements', 'Form Controls', 'Selects', 'List & Tables', 'Charts', 'Bootstrap', 'Datepickers', 'Images', 'Maps', 'and more',], values: [126, 92, 64, 62, 54, 51, 49, 42, 40,309]};
   createPieChart('pie-chart-addons', 'Component Addons', addonData);
+  // createPieChart('pie-chart-addons-2', 'Component Addons', addonData);
   createPieChart('pie-chart-rfcs', 'Number of RFCs', { labels: ['open', 'merged in past year', 'merged more than a year ago', 'merged more than two years ago'], values: [54,24,10,10] });
   let pieData = getCommsOverviewData();
   createPieCharts(pieData);
-  createChart('chart-contributors', 'bar', 'Number of Contributors per Project', { labels: ['emberjs/ember.js', 'glimmerjs/glimmer.js', 'glimmer-vm', 'guides','ember-data', 'ember-cli/ember-cli'], values: [706,26,80,508,421,385] }, defaultOptions.simpleBars);
+  createChart('chart-contributors', 'bar', 'Number of Contributors per Project', { labels: ['emberjs/ember.js', 'glimmerjs/glimmer.js', 'glimmer-vm', 'guides','ember-data', 'ember-cli/ember-cli'], values: ['706','26','80','508','421','385'] }, defaultOptions.simpleBars, );
   let topChannelLabels = ['#help','#general', '#random', '#ember-data', '#team-learning'];
   let topChannelLabelsWk = ['#help','#general', '#topic-typescript', '#team-learning', '#testing'];
   let slackChannelData = { labels: topChannelLabels,  values: [409728,231971,115270,57634,54760] };
@@ -494,8 +646,8 @@ async function loadCharts() {
   createChart('chart-messages-ratio-slack', 'bar', '# Messages / User all time', numOfMessagesRatio, defaultOptions.simpleBars);
   createChart('chart-messages-ratio-trending', 'bar', '# Messages / User (past 30 days)', numOfMessagesRatioWk, defaultOptions.simpleBars);
   createChart('chart-typescript-download', 'bar', 'Ember CLI TypeScript - Downloads / Month', dataDownloads[12]); // elementId, label, data, options, colorOptions
-  createChart('chart-typescript-download-normalized', 'bar', 'Ember CLI TypeScript - Downloads / Month', { labels: dataDownloads[12].labels, values: normalizeData(dataDownloads[12])}); // elementId, label, data, options, colorOptions
-  createChart('chart-newsletter-subscribers', 'horizontalBar', '# Subscribers', { labels: ['Ember.js Times','Ember Weekly'], values: [1108,6055]}, defaultOptions.simpleBars); // elementId, label, data, options, colorOptions
+  // createChart('chart-typescript-download-normalized', 'bar', 'Ember CLI TypeScript - Downloads / Month', { labels: dataDownloads[12].labels, values: dataDownloads[12].values }); // elementId, label, data, options, colorOptions
+  // createChart('chart-newsletter-subscribers', 'horizontalBar', '# Subscribers', { labels: ['Ember.js Times','Ember Weekly'], values: [1108,6055]}, defaultOptions.simpleBars); // elementId, label, data, options, colorOptions
   const goodbitsData = await parseNewsletterData('./data/goodbitsstats.json');
   console.log(goodbitsData);
   createChart('chart-subscriber-count', 'line', '# of Subscribers', goodbitsData.subs);
