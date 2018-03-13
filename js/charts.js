@@ -48,16 +48,40 @@ const defaultColors = {
   ],
 };
 
+const defaultLegend = {
+  labels: {
+    fontSize: 16,
+  },
+};
+
 const defaultOptions = {
   bars: {
+      legend: defaultLegend,
       maintainAspectRatio: false,
       scales: {
           yAxes: [{
               ticks: {
                   beginAtZero: true,
+                  padding: 40,
+                  fontSize: 16,
+              },
+              afterTickToLabelConversion : function(q){
+                  for(var tick in q.ticks){
+                    let tickRaw = q.ticks[tick];
+                    let cutoff = tickRaw.length - 3;
+                    if (tickRaw > 1000 && tickRaw < 1000000) {
+                      q.ticks[tick] = tickRaw.substring(0, cutoff) + 'K';
+                    } else if (tickRaw >= 1000000) {
+                      let tickRaw = q.ticks[tick];
+                      q.ticks[tick] = tickRaw.substring(0, cutoff - 3) + 'M';
+                    }
+                  }
               },
           }],
           xAxes: [{
+              ticks: {
+                fontSize: 16,
+              },
               offset: true,
               bounds: 'ticks',
               type: 'time',
@@ -75,30 +99,38 @@ const defaultOptions = {
       },
    },
    simpleBars: {
+     legend: defaultLegend,
      maintainAspectRatio: false,
      scales: {
          yAxes: [{
              ticks: {
-                 beginAtZero: true
+               fontSize: 16,
+               beginAtZero: true
              }
          }],
          xAxes: [{
            ticks: {
-               beginAtZero: true
+              fontSize: 16,
+              beginAtZero: true
            }
          }],
       },
    },
    lines: {
+       legend: defaultLegend,
        maintainAspectRatio: false,
        scales: {
            yAxes: [{
                ticks: {
-                   beginAtZero:true
+                 fontSize: 16,
+                 beginAtZero:true
                }
            }],
            xAxes: [{
                type: 'time',
+               ticks: {
+                 fontSize: 16,
+               },
                time: {
                    displayFormats: {
                        month: 'MMM YYYY'
@@ -212,7 +244,7 @@ function createChart(elementId, type = 'line', mainLabel, inputData, configOptio
 
 function createPieChart(elementId, mainLabel, inputData, configOptions, colorOptions, extraLabels) {
   var ctx = document.getElementById(elementId).getContext('2d');
-  let options = configOptions ? configOptions : { title: { display: true, text: mainLabel }, legend: { position: 'bottom'}};
+  let options = configOptions ? configOptions : { title: { display: true, text: mainLabel, fontSize: 16, }, legend: { position: 'bottom', fontSize: 16, }};
   let backgroundColor = colorOptions && colorOptions.backgroundColor ? colorOptions.backgroundColor : defaultColors.contrasts;
   console.log(backgroundColor);
 
@@ -262,7 +294,7 @@ function createCharts(dataDownloads) {
                 backgroundColor: 'green',
                 borderColor: 'green',
               },
-              { label: 'React CLI',
+              { label: 'Create React App',
                 stack: 'react',
                 data: dataDownloads[2].values,
                 backgroundColor: 'turquoise',
@@ -424,19 +456,19 @@ function parseNewsletter(data) {
 }
 
 async function loadCharts() {
-  const downloadList = ['ember-cli', 'angular-cli', 'react-cli', 'vue-cli', '@angular-cli', 'ember-cli-babel', 'ember-cli-sass', 'ember-data', 'ember-try', 'ember-wormhole', 'ember-concurrency', 'ember',
+  const downloadList = ['ember-cli', 'angular-cli', 'create-react-app', 'vue-cli', '@angular-cli', 'ember-cli-babel', 'ember-cli-sass', 'ember-data', 'ember-try', 'ember-wormhole', 'ember-concurrency', 'ember',
   'ember-cli-typescript', 'total'];
   let dataDownloads = await parseDownloadData(downloadList, { factor: 1 });
   let totalDownloads = dataDownloads[13].values;
   console.log(totalDownloads);
   createCharts(dataDownloads);
   createChart('chart-ember-download', 'bar', 'Ember CLI - Downloads / Month', dataDownloads[0]); // elementId, label, data, options, colorOptions
-  createChart('chart-ember-download-2', 'bar', 'Ember CLI - Downloads / Month', dataDownloads[0]);
-  createChart('chart-total-download', 'bar', 'Total Number of Downloads from NPM / Month', dataDownloads[13]);
+  //createChart('chart-ember-download-2', 'bar', 'Ember CLI - Downloads / Month', dataDownloads[0]);
+  //createChart('chart-total-download', 'bar', 'Total Number of Downloads from NPM / Month', dataDownloads[13]);
   let normalizedCliDownloads = normalizeData(dataDownloads[0]);
   let normalizedCliDownloadsData = { labels: dataDownloads[0].labels, values: normalizedCliDownloads };
   console.log(normalizedCliDownloadsData);
-  createChart('chart-ember-download-normalized', 'bar', 'Ember CLI - Downloads / Month (normalized)', normalizedCliDownloadsData);
+//  createChart('chart-ember-download-normalized', 'bar', 'Ember CLI - Downloads / Month (normalized)', normalizedCliDownloadsData);
   let channelCompData = { labels: ['Slack', 'Twitter: @emberjs', 'Gitter', 'IRC'], values: [11495, 38737, 718, 999]};
   createStarsCharts();
   createChart('channel-comparison', 'bar', '# of Users', channelCompData, defaultOptions.simpleBars);
