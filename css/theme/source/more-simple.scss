@@ -28,8 +28,8 @@ $headingColor: rgba(52, 0, 0, 1);
 $headingTextShadow: none;
 $headingTextTransform: none;
 $backgroundColor: #fff;
-$linkColor: #ffbcbc;
-$linkColorHover: lighten( $linkColor, 20% );
+$linkColor: #dcba9b;
+$linkColorHover: darken( $linkColor, 20% );
 $selectionBackgroundColor: rgba(0, 0, 0, 0.99);
 $primary-color: #E04E39;
 $secondary-color: #000;
@@ -47,7 +47,7 @@ section.has-dark-background {
 
 
 body {
-	background-color: #fffefe;
+	background-color: lighten( $linkColor, 50% );
 }
 
 .reveal {

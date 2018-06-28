@@ -607,26 +607,6 @@ function parseNewsletter(data) {
 }
 
 async function loadCharts() {
-  const downloadList = ['ember-cli', 'angular-cli', 'create-react-app', 'vue-cli', '@angular-cli', 'ember-cli-babel', 'ember-cli-sass', 'ember-data', 'ember-try', 'ember-wormhole', 'ember-concurrency', 'ember',
-  'ember-cli-typescript', 'total'];
-  let dataDownloads = await parseDownloadData(downloadList, { factor: 1 });
-  let totalDownloads = dataDownloads[13].values;
-  console.log(totalDownloads);
-  createCharts(dataDownloads);
-  createChart('chart-ember-download', 'bar', 'Ember CLI - Downloads / Month', dataDownloads[0]); // elementId, label, data, options, colorOptions
-  //createChart('chart-ember-download-2', 'bar', 'Ember CLI - Downloads / Month', dataDownloads[0]);
-  //createChart('chart-total-download', 'bar', 'Total Number of Downloads from NPM / Month', dataDownloads[13]);
-  // let normalizedCliDownloads = normalizeData(dataDownloads[0]);
-  let normalizedCliDownloads = dataDownloads[0].values;
-  let normalizedCliDownloadsData = { labels: dataDownloads[0].labels, values: normalizedCliDownloads };
-//  createChart('chart-ember-download-normalized', 'bar', 'Ember CLI - Downloads / Month (normalized)', normalizedCliDownloadsData);
-  // let channelCompData = { labels: ['Slack', 'Twitter: @emberjs',], values: [11495, 38737, 718, 999]};
-  createStarsCharts();
-  // createChart('channel-comparison', 'bar', '# of Users', channelCompData);
-  const addonData = { labels: ['UI Elements', 'Form Controls', 'Selects', 'List & Tables', 'Charts', 'Bootstrap', 'Datepickers', 'Images', 'Maps', 'and more',], values: [126, 92, 64, 62, 54, 51, 49, 42, 40,309]};
-  createPieChart('pie-chart-addons', 'Component Addons', addonData);
-  // createPieChart('pie-chart-addons-2', 'Component Addons', addonData);
-  createPieChart('pie-chart-rfcs', 'Number of RFCs', { labels: ['open', 'merged in past year', 'merged more than a year ago', 'merged more than two years ago'], values: [54,24,10,10] });
   let pieData = getCommsOverviewData();
   createPieCharts(pieData);
   createChart('chart-contributors', 'bar', 'Number of Contributors per Project', { labels: ['emberjs/ember.js', 'glimmerjs/glimmer.js', 'glimmer-vm', 'guides','ember-data', 'ember-cli/ember-cli'], values: ['706','26','80','508','421','385'] }, defaultOptions.simpleBars, );
@@ -644,8 +624,6 @@ async function loadCharts() {
   let numOfMessagesRatio = { labels: topChannelLabels, values: slackChannelDataUserNum.values.map((usersNum, index) => slackChannelData.values[index] / usersNum) };
   let numOfMessagesRatioWk = { labels: topChannelLabelsWk, values: slackChannelDataUserNumWk.values.map((usersNum, index) => slackChannelDataWk.values[index] / usersNum) };
   createChart('chart-messages-ratio-slack', 'bar', '# Messages / User all time', numOfMessagesRatio, defaultOptions.simpleBars);
-  createChart('chart-messages-ratio-trending', 'bar', '# Messages / User (past 30 days)', numOfMessagesRatioWk, defaultOptions.simpleBars);
-  createChart('chart-typescript-download', 'bar', 'Ember CLI TypeScript - Downloads / Month', dataDownloads[12]); // elementId, label, data, options, colorOptions
   // createChart('chart-typescript-download-normalized', 'bar', 'Ember CLI TypeScript - Downloads / Month', { labels: dataDownloads[12].labels, values: dataDownloads[12].values }); // elementId, label, data, options, colorOptions
   // createChart('chart-newsletter-subscribers', 'horizontalBar', '# Subscribers', { labels: ['Ember.js Times','Ember Weekly'], values: [1108,6055]}, defaultOptions.simpleBars); // elementId, label, data, options, colorOptions
   const goodbitsData = await parseNewsletterData('./data/goodbitsstats.json');
