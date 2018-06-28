@@ -222,4 +222,11 @@ body {
    ul {
 		 width: 100%;
 	 }
+
+	 i {
+		 &.small {
+			 font-size: .6em;
+	     line-height: 7px;
+		 }
+	 }
 }

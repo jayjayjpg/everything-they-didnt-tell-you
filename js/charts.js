@@ -536,7 +536,7 @@ function createPieCharts(data) {
         'Gitter: emberjs/emberjs',
       ],
       values: [2729873, 0]};
-  const slackSummary = createPieChart('pie-chart-messages-slack', 'Number of weekly Users', slackOverviewData);
+  // const slackSummary = createPieChart('pie-chart-messages-slack', 'Number of weekly Users', slackOverviewData);
 }
 
 function getCommsOverviewData() {
@@ -609,7 +609,7 @@ function parseNewsletter(data) {
 async function loadCharts() {
   let pieData = getCommsOverviewData();
   createPieCharts(pieData);
-  createChart('chart-contributors', 'bar', 'Number of Contributors per Project', { labels: ['emberjs/ember.js', 'glimmerjs/glimmer.js', 'glimmer-vm', 'guides','ember-data', 'ember-cli/ember-cli'], values: ['706','26','80','508','421','385'] }, defaultOptions.simpleBars, );
+  // createChart('chart-contributors', 'bar', 'Number of Contributors per Project', { labels: ['emberjs/ember.js', 'glimmerjs/glimmer.js', 'glimmer-vm', 'guides','ember-data', 'ember-cli/ember-cli'], values: ['706','26','80','508','421','385'] }, defaultOptions.simpleBars, );
   let topChannelLabels = ['#help','#general', '#random', '#ember-data', '#team-learning'];
   let topChannelLabelsWk = ['#help','#general', '#topic-typescript', '#team-learning', '#testing'];
   let slackChannelData = { labels: topChannelLabels,  values: [409728,231971,115270,57634,54760] };
@@ -618,12 +618,12 @@ async function loadCharts() {
   let slackChannelDataUserNumWk = { labels: topChannelLabelsWk,  values: [10218,11493,234,799,7034] };
   let channelDistributionData = { labels: ['Defaults', 'Core & Dev Channels', 'Local Channels (local-/lang-)', 'Addon Specific Channels', 'Event Channels', 'Other Fun Stuff'],
   values: [6,18,28,35,9,104] };
-  createPieChart('pie-chart-channel-distribution', 'Channel Topics', channelDistributionData);
-  createPieChart('pie-chart-messages-slack-distribution', 'Most Popular Channels: Total Messages all time', slackChannelData);
-  createPieChart('pie-chart-messages-slack-channel-user-number', 'Most Popular Channels: Number of Users all time', slackChannelDataUserNum);
-  let numOfMessagesRatio = { labels: topChannelLabels, values: slackChannelDataUserNum.values.map((usersNum, index) => slackChannelData.values[index] / usersNum) };
-  let numOfMessagesRatioWk = { labels: topChannelLabelsWk, values: slackChannelDataUserNumWk.values.map((usersNum, index) => slackChannelDataWk.values[index] / usersNum) };
-  createChart('chart-messages-ratio-slack', 'bar', '# Messages / User all time', numOfMessagesRatio, defaultOptions.simpleBars);
+  // createPieChart('pie-chart-channel-distribution', 'Channel Topics', channelDistributionData);
+  // createPieChart('pie-chart-messages-slack-distribution', 'Most Popular Channels: Total Messages all time', slackChannelData);
+  // createPieChart('pie-chart-messages-slack-channel-user-number', 'Most Popular Channels: Number of Users all time', slackChannelDataUserNum);
+  // let numOfMessagesRatio = { labels: topChannelLabels, values: slackChannelDataUserNum.values.map((usersNum, index) => slackChannelData.values[index] / usersNum) };
+  // let numOfMessagesRatioWk = { labels: topChannelLabelsWk, values: slackChannelDataUserNumWk.values.map((usersNum, index) => slackChannelDataWk.values[index] / usersNum) };
+  // createChart('chart-messages-ratio-slack', 'bar', '# Messages / User all time', numOfMessagesRatio, defaultOptions.simpleBars);
   // createChart('chart-typescript-download-normalized', 'bar', 'Ember CLI TypeScript - Downloads / Month', { labels: dataDownloads[12].labels, values: dataDownloads[12].values }); // elementId, label, data, options, colorOptions
   // createChart('chart-newsletter-subscribers', 'horizontalBar', '# Subscribers', { labels: ['Ember.js Times','Ember Weekly'], values: [1108,6055]}, defaultOptions.simpleBars); // elementId, label, data, options, colorOptions
   const goodbitsData = await parseNewsletterData('./data/goodbitsstats.json');
